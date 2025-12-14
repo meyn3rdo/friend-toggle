@@ -1,0 +1,36 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- === WHITELIST ===
+local allowedUsers = {
+    "meyn3rdo",
+    "cash212680",
+    "FriendUsername2",
+    "AnotherTrustedUser",
+
+    -- "ExampleUser123",
+    -- "BestFriendRoblox",
+}
+
+local isAllowed = false
+for _, username in ipairs(allowedUsers) do
+    if player.Name == username then
+        isAllowed = true
+        break
+    end
+end
+
+if isAllowed then
+    print("Whitelist passed! Loading script for " .. player.Name)
+    
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://pastefy.app/8jT8n6Aj/raw"))()
+    end)
+    
+    if not success then
+        warn("Failed to load the script: " .. tostring(err))
+    end
+else
+    -- If not whitelisted, kick the player from the game
+    player:Kick("Access Denied: You are not on the whitelist.")
+end

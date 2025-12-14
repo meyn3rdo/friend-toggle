@@ -5,7 +5,7 @@ local player = Players.LocalPlayer
 local allowedUsers = {
     "meyn3rdo",
     "cash212680",
-    "Ethan237807680",
+    "AnotherUserToTrust",
     "AnotherTrustedUser",
 
     -- "ExampleUser123",
